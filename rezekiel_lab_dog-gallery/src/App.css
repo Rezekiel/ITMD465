@@ -1,0 +1,45 @@
+.banner{
+    margin:1px 20px;
+}
+.App{
+    text-align: center;
+   background-color:lightslategrey;
+     margin-right:5rem;
+    margin-left: 5rem; 
+    padding-top: .5rem;
+}
+.picturecontainer{
+    height:115px;
+    display: inline-block;
+    margin: auto;
+}
+.picturecontainer img{
+    height: 100%;
+}
+#gallery{
+    display:flex;
+    flex-wrap: wrap;
+}
+#featured{
+    height:450px;
+    width:500px;
+    margin:auto;
+    padding-top:0px;
+}
+#featured img{
+    height: 100%;
+    width: 100%;
+    padding:10px;
+    background-color:#d1dfe685;
+    object-fit: contain;
+    box-shadow: 0px 1px 22px -3px rgba(0,0,0,0.99);
+}
+
+#gallery.jumbotron{
+    margin-top: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+    padding:1rem;
+    box-shadow: 0px 1px 22px -3px rgba(0,0,0,0.99);
+}

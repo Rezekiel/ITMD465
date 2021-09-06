@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>ITMD-4/565 Lab - Canvas Drawing</title>
+	<style type="text/css">
+		#content-wrapper {
+			width: 600px;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		#canvasRun {
+			background-color: #c00;
+			border: 0;
+			color: #fff;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="content-wrapper">
+		<button id="canvasRun">Draw Canvas</button><br><br>
+		<canvas id="myCanvas" width="600" height="450"></canvas>
+	</div>
+	<script type="text/javascript">
+		// Canvas Drawing Code Here
+
+		document.querySelector("#canvasRun").addEventListener('click', function () {
+
+			var canvas = document.getElementById('myCanvas')
+				;
+			var c = canvas.getContext('2d');
+			canvas.style.background = "linear-gradient(white, black)";
+
+			c.font = "32px sans-serif";
+			c.fillStyle = "red";
+			c.fillText("ITMD 465 Canvas Lab", canvas.width / 4.5, canvas.height / 15.5);
+
+			c.fillStyle = "white";
+			c.font = "14px sans-serif";
+			c.fillText("Raymond Ezekiel", 50, 400);
+			c.fillText("rezekiel@hawk.iit.edu", 50, 430);
+
+			//rectangle-square with fill and stroke
+			c.beginPath();
+			c.lineWidth = 10;
+			c.strokeStyle = "white";
+			c.rect(450, 100, 100, 100);
+			c.stroke();
+			c.fillStyle = "#C80000";
+			c.fill();
+			c.closePath();
+
+			//circle
+			c.beginPath();
+			c.lineWidth = 2;
+			c.strokeStyle = "white";
+			c.fillStyle = "#0000C8";
+			c.arc(120, 145, 50, 0, Math.PI * 2);
+			c.fill();
+			c.stroke();
+
+			//circle
+			c.beginPath();
+			c.lineWidth = 10;
+			c.strokeStyle = "#FFA500";
+			c.arc(280, 150, 50, 80.30, 1.0);
+			c.stroke();
+			c.closePath();
+
+			//triangle
+			c.beginPath();
+			c.fillStyle = "#00C800";
+			//starting point of line1 (x1,y1)
+			c.moveTo(30, 350);
+			//define the end point of line1 (x2,y2)
+			c.lineTo(200, 350);
+			//end point of line2 (x3,y3), top of triangle
+			c.lineTo(120, 200);
+			//end point of line3 (x1,y1). We are back to where we started
+			c.lineTo(30, 350);
+			//draw the points that makeup the triangle - (x1,y1) to (x2,y2), (x2,y2) to (x3,y3), and (x3,y3) to (x1,y1)
+			c.fill();
+			c.closePath();
+
+			c.beginPath();
+			c.lineWidth = 1;
+			c.rect(350, 235, 200, 90);
+			c.fillStyle = "white";
+			c.strokeStyle - "black";
+			c.fill();
+			c.stroke();
+			c.closePath();
+
+			c.lineWidth = 3;
+			c.beginPath();
+			c.setLineDash([7, 3]);
+			c.moveTo(550, 280);
+			// c.lineTo(50, 20);
+			c.bezierCurveTo(400, 320, 450, 250, 340, 279);
+			c.strokeStyle - "black";
+			c.stroke();
+
+			make_base();
+			function make_base() {
+				iitimg = new Image();
+				iitimg.src = 'IIT_SAT.png';
+				iitimg.onload = function () {
+					c.drawImage(iitimg, 290, 330, canvas.width / 2, canvas.height / 5);
+					;
+				}
+			}
+
+		})
+
+	</script>
+</body>
+
+</html>
